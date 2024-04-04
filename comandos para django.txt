@@ -1,0 +1,51 @@
+-para crear un entorno virtual:
+python -m venv env
+
+-para activar el entorno virtual:
+entras a la carpeta/Scripts/ activar
+
+-para instalar django:
+pip install django
+
+-para instalar el conector con SQL server:
+pip install mssql-django==1.4
+
+-para crear el proyecto:
+django-admin startproject SchoolProject
+
+-para correr el proyecto con una nueva configuración:
+python manage.py runserver --settings=empleado.settings.local
+
+-correr la aplicación:
+python manage.py runserver
+
+-para crar un nuevo proyecto dentro de aplications:
+django-admin startapp empleados
+
+-para verificar los modelos nuevo de cada tabla:
+python manage.py makemigrations 
+
+-para ya hacer la migracion en la base de datos:
+python manage.py migrate 
+
+-python manage.py migrate --fake <empleado> zero
+
+ng new --no-standalone
+
+-para instalar los cors:
+pip install django-cors-headers
+
+-Para crear un usuario administrador:
+python manage.py createsuperuser
+
+--para crear guardianes en angular:
+ng generate guard auth
+
+--para crear un proyecto de angular con el app-routing.module.ts:
+ng new hierbaMala --standalone=false
+
+--para instalar bootstrap en la nueva version de angular
+npm install bootstrap
+npm install ngx-bootstrap --save
+
+(se agrega lo mismo en el angular.json
