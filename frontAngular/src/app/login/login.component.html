@@ -1,0 +1,17 @@
+<section class="formulario">
+    <form>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Usuario</label>
+          <input type="text"  [(ngModel)]="usuario" [ngModelOptions]="{standalone: true}" class="form-control" id="usuario" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">Constraseña</label>
+          <input type="password"  [(ngModel)]="contrasenia" [ngModelOptions]="{standalone: true}" class="form-control" id="contrasenia" [type]="showPassword ? 'text' : 'password'">
+        </div>
+        <div class="mb-3 form-check">
+          <input type="checkbox" class="form-check-input" id="exampleCheck1" (change)="togglePasswordVisibility()">
+          <label class="form-check-label" for="exampleCheck1">Check me out</label>
+        </div>
+        <button type="submit" class="btn btn-primary" (click)="logueo()">Submit</button>
+      </form>
+</section>
