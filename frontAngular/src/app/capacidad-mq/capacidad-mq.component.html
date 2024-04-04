@@ -1,0 +1,51 @@
+<p>{{nombre2}}</p>
+<section class="formulario">
+    <form action="">
+        <div class="form-floating mb-3">
+            <input type="text" [(ngModel)]="nombre" [ngModelOptions]="{standalone: true}" class="form-control" id="nombre" placeholder="Nombre">
+            <label for="floatingInput">Nombre</label>
+        </div>
+        <div class="form-floating mb-3">
+            <input type="text" [(ngModel)]="usuario" [ngModelOptions]="{standalone: true}" class="form-control" id="usuario" placeholder="Usuario">
+            <label for="floatingInput">Usuario</label>
+        </div>
+        <div class="form-floating">
+            <input type="password" [(ngModel)]="contrasenia" [ngModelOptions]="{standalone: true}" class="form-control" id="contrasenia" placeholder="Contrasenia">
+            <label for="floatingPassword">Contraseña</label>
+        </div>
+        <div class="registrar">
+            <button class="btn btn-primary" type="submit" (click)="registrar()">Registrar</button>
+            <button class="btn btn-warning" type="submit" (click)="actualizar()">Actualizar</button>
+        </div>
+    </form>
+</section>
+<section class="tabla">
+  <!-- Campo de entrada para filtrar por nombre -->
+  <div class="form-group">
+    <label for="filtroNombre">Filtrar:</label>
+    <input type="text" [(ngModel)]="filtro" placeholder="Filtrar" class="form-control mb-2">
+  </div>
+    <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">Nombre</th>
+            <th scope="col">Usuario</th>
+            <th scope="col">Contraseña</th>
+            <th scope="col">Estatus</th>
+            <th scope="col">Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let items of filtrarPorNombre()">
+            <td>{{items.nombre}}</td>
+            <td>{{items.usuario}}</td>
+            <td>{{items.contrasenia}}</td>
+            <td>{{items.estatus}}</td>
+            <td><button class="btn btn-warning" (click)="actualizardata(items)">Editar</button></td>
+            <td><button class="btn btn-danger" (click)="eliminarUser(items)">Eliminar</button></td>
+          </tr>
+        </tbody>
+      </table>
+</section>
+<button class="btn btn-danger" (click)="salir()">Salir</button>
+<button class="btn btn-success" routerLink="/personal">regresar</button>
